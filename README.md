@@ -11,7 +11,6 @@ create in 2024/04/21.
       - 時間複雜度:O(log n).
       - 空間複雜度:O(1).
 
-      
   ### 1-2 27. Remove Element 
       - KEY IDAE: Slow pointer and Fast pointer.
       - Double Pointer.
@@ -24,10 +23,16 @@ create in 2024/04/21.
       - Double Pointer.
       - 時間複雜度為 O(n).
       
-  ### 1-4 209.
-      - KEY IDEAS: 
+  ### 1-4 209. Minimun Size Subarray Sum
+      - KEY IDEAS: Moving Window, Fast pointer find target, slow pointer minimize length.
+      - Double Pointer.
+      - When moving slow pointer, use WHILE instead of IF.
       - 時間複雜度：O(n).
       - 空間複雜度：O(1).
-  ### 1-5 59.
-      - KEY IDEAS: 
+      
+  ### 1-5 59. Spiral Matrix.cpp
+      - KEY IDEAS: Divide into 4 lines, change x-axis and y-axis index.
+      - 2D-Vector : vector<vector<int>> matrix(n, vector<int>(n));
+      - Find that n/2 is the rotate times.
+      - If n is odd, need to tackle with CENTER.
 
