@@ -9,6 +9,7 @@ public:
         int counter = 1;
         int loop = n/2;
         int startx=0, starty=0;
+        
         while(loop--){
             i = startx;
             j = starty;
@@ -49,7 +50,7 @@ public:
         vector<vector<int>> matrix(n, vector<int>(n));
         int num = 1;
         int start = 0, end = n - 1;
-
+        // 分成四條線做模擬
         while (start < end) {
             for (int i = start; i < end; i++) matrix[start][i] = num++;
             for (int i = start; i < end; i++) matrix[i][end] = num++;
