@@ -81,12 +81,12 @@ create in 2024/04/21.
       - 時間複雜度：O(n).
       - 空間複雜度：O(1).
 
-  ### 2-6 160. 
+  ### 2-6 160. Intersection os Two Linklist
       - KEY IDEAS 1: 把兩著的尾端對齊，再從短鏈表的 head 與 長鏈表的 ptr 往後找。
       - KEY IDEAS 2: Double Pointer method. 讓 A 尾巴接在 B 頭部，讓 B 尾巴接在 A 頭部，觀察是否相遇。
       - - 時間複雜度：O(n+m).
       
-  ### 2-6 142. Detect Linklist Cycle II
+  ### 2-7 142. Detect Linklist Cycle II
       - KEY IDEAS: Double Pointer.
       - 讓快指針每次走兩步，慢指針每次走一步，若有環狀則他們必定會相遇。
       - How to Find th POSITION?
