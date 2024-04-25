@@ -97,3 +97,40 @@ create in 2024/04/21.
       -- 當 n>1 時 情況相同。
       - 時間複雜度：O(n).
       - 空間複雜度：O(1).
+
+## 3. Hash Table
+| 類型 | 底層實現 | 是否有序 | 鍵值是否可以重複 | 查找效率 | 插入效率 | 
+| ---- | -------- | -------- | ---------------- | -------- | -------- |
+| `std::map` | 紅黑樹 | 有序 | 鍵值不可重複 | O(log n) | O(log n) |
+| `std::multimap` | 紅黑樹 | 有序 | 鍵值可重複 | O(log n) | O(log n) |
+| `std::unordered_map` | 哈希表 | 無序 | 鍵值不可重複 | O(1) | O(1) |
+std::set 和std::multiset 的底層實現是紅黑樹，紅黑樹是一種平衡二叉搜 索樹，所以key值是有序的。
+當我們要使用集合來解決哈希問題的時候，優先使用unordered_set，因為它的查詢和增刪效率是最優的，如果需要集合是有序的，那麼就用set，如果要求不僅有序還要有重複數據的話，那麼就用multiset。
+
+  ### 3-1 242. Valid anagram.cpp
+      - KEY IDEAS: 創建一個 hash map 紀錄出現字母的次數. (array)
+      - record[s[i]-'a']++; // 減去他的ASCI Code
+      - 時間複雜度：O(n).
+      - 空間複雜度：O(1).
+
+  ### 3-2 1002: Find Common Character.cpp
+      - KEY IDEAS: 創建兩個 hash map ，一個紀錄第n個字串，一個紀錄n+1個字串，取min。
+      - hash1[k] = min(hash1[k], hash2[k]);
+      - 如何將 HashMap 變成字串輸出？
+            while(hash1[k] != 0){
+                string s(1, k+'a');
+                result.push_back(s);
+                hash1[k]--;
+            }
+      - 時間複雜度：O(m) + O(nk) + O(n) = O(m + nk).
+      - 空間複雜度：O(1).
+
+  ### 3-3 349. Intersection of Two Arrays
+      - KEY IDEAS: unordered_set , 輸出的結果的去重的， 同時可以不考慮輸出結果的順序
+      - 語法：unordered_set<int> nums_set(nums1.begin(), nums1.end());
+      - nums_set.find(3); 查找有沒有三這個元素
+      - nums_set.end(); 遍歷到最後一個元素
+       - 時間複雜度：O(mn).
+      - 空間複雜度：O(n).
+
+  ### 3-4 202. Happy Number
