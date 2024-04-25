@@ -105,7 +105,7 @@ create in 2024/04/21.
 | `std::multimap` | 紅黑樹 | 有序 | 鍵值可重複 | O(log n) | O(log n) |
 | `std::unordered_map` | 哈希表 | 無序 | 鍵值不可重複 | O(1) | O(1) |
 
-std::set 和std::multiset 的底層實現是紅黑樹，紅黑樹是一種平衡二叉搜 索樹，所以key值是有序的。
+std::set 和std::multiset 的底層實現是紅黑樹，紅黑樹是一種平衡二叉搜索樹，所以key值是有序的。
 
 當我們要使用集合來解決哈希問題的時候，優先使用unordered_set，因為它的查詢和增刪效率是最優的，如果需要集合是有序的就用set，如果要求不僅有序還要有重複數據的話，那麼就用multiset。
 
