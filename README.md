@@ -99,6 +99,11 @@ create in 2024/04/21.
       - 空間複雜度：O(1).
 
 ## 3. Hash Table
+
+#### 什麼時候使用哈希法?
+
+當我們需要查詢一個元素是否出現過，或者一個元素是否在集合里的時候，就要第一時間想到哈希法。
+
 | 類型 | 底層實現 | 是否有序 | 鍵值是否可以重複 | 查找效率 | 插入效率 | 
 | ---- | -------- | -------- | ---------------- | -------- | -------- |
 | `std::map` | 紅黑樹 | 有序 | 鍵值不可重複 | O(log n) | O(log n) |
@@ -131,8 +136,13 @@ std::set 和std::multiset 的底層實現是紅黑樹，紅黑樹是一種平衡
       - KEY IDEAS: unordered_set , 輸出的結果的去重的， 同時可以不考慮輸出結果的順序
       - 語法：unordered_set<int> nums_set(nums1.begin(), nums1.end());
       - nums_set.find(3); 查找有沒有三這個元素
-      - nums_set.end(); 遍歷到最後一個元素
-       - 時間複雜度：O(mn).
+      - .find() 方法會返回一個迭代器。如果找到元素 n，它返回的迭代器會指向該元素。如果沒有找到，迭代器會等於 result.end()
+      - 時間複雜度：O(mn).
       - 空間複雜度：O(n).
 
   ### 3-4 202. Happy Number
+      - KEY IDEAS: unordered_set，查找有沒有出現過，有出現過則代表陷入無窮迴圈。
+      - function 要寫在 public: 下面
+      - if(result.find(n) != result.end()) 用法要學好，如果沒有找到，迭代器會等於 result.end()
+
+  ### 3-5 1. Two Sum
